@@ -4,11 +4,12 @@ public class TemplateTipe2 {
 
     public static void main(String[] args) {
         //Silakan ganti code berikut
-        Toko oneShop = new Toko("One Shop", "Jl. Merdeka No.241", 20000000);
+        Toko oneShop = Toko.getTokoInstance("One Shop", "Jl. Merdeka No.241", 20000000);
         //
         
         //Silakan buat toko baru dengan nama "Sinar Makmur" menggunakan Singleton
         //...
+        //Toko sinarMakmur = Toko.getTokoInstance("Sinar Makmur", "Jl. Penjajah No.42",36000000);
         //
         
         KaryawanFactory kf = new KaryawanFactory();
@@ -16,9 +17,9 @@ public class TemplateTipe2 {
         Karyawan wilson, olivia, brian, evans;
         
         //Silakan ganti code berikut
-        smith = new Manager("Smith", 3500000, oneShop, "Utama");
-        michael = new Manager("Michael", 3000000, oneShop, "Utama");
-        andreson = new Manager("Andreson", 1000000, oneShop, "Bagian");
+        smith = kf.createKaryawan("Smith","Manager", 3500000, oneShop, "Utama",0);
+        michael = kf.createKaryawan("Michael","Manager", 3000000, oneShop, "Utama",0);
+        andreson = kf.createKaryawan("Andreson", "Manager",1000000, oneShop, "Bagian",0);
         //
         
         oneShop.SetPenanggungJawab(smith);
@@ -26,10 +27,10 @@ public class TemplateTipe2 {
         smith.RekrutBawahan(andreson);
 
         //Silakan ganti code berikut
-        wilson = new Kasir("Wilson", 300000, oneShop, 1);
-        olivia = new Kasir("Olivia", 800000, oneShop, 8);
-        brian = new Kasir("Brian", 400000, oneShop, 3);
-        evans = new Kasir("Evans", 500000, oneShop, 5);
+        wilson = kf.createKaryawan("Wilson","Kasir", 300000, oneShop,"", 1);
+        olivia = kf.createKaryawan("Olivia","Kasir", 800000, oneShop, "",8);
+        brian = kf.createKaryawan("Brian","Kasir", 400000, oneShop, "",3);
+        evans = kf.createKaryawan("Evans","Kasir", 500000, oneShop, "",5);
         //
         
         michael.RekrutBawahan(wilson);
