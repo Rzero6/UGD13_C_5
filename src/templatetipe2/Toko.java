@@ -17,11 +17,11 @@ public class Toko {
     private double danaToko;
     
     //Perbaiki code berikut sehingga sesuai dengan prinsip Singleton
-    Toko TokoInstance = null;
+    private static Toko TokoInstance = null;
     //
     
     //Perbaiki code berikut sehingga sesuai dengan prinsip Singleton
-    public Toko(String namaToko, String alamat, double danaToko) {
+    private Toko(String namaToko, String alamat, double danaToko) {
         this.namaToko = namaToko;
         this.alamat = alamat;
         this.penanggunJawab = null;
@@ -31,7 +31,16 @@ public class Toko {
     //
     
     //Lengkapi code berikut
-    public static Toko getTokoInstance() {
+    public static Toko getTokoInstance(String namaToko, String alamat, double danaToko) {
+        System.out.println("\nMembuat Objek Toko Baru...");
+        
+        if(Toko.TokoInstance == null){
+            Toko.TokoInstance = new Toko(namaToko, alamat, danaToko);
+            System.out.println("Toko " + namaToko + " Berhasil Dibuat");
+        }else {
+            System.out.println("Toko " + TokoInstance.namaToko + " Sudah Ada Sebelumnya");
+            System.out.println("Toko " + namaToko + " Gagal Dibuat");
+        }
         return null;
     }
     
