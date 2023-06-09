@@ -32,16 +32,14 @@ public class Toko {
     
     //Lengkapi code berikut
     public static Toko getTokoInstance(String namaToko, String alamat, double danaToko) {
-        System.out.println("\nMembuat Objek Toko Baru...");
-        
-        if(Toko.TokoInstance == null){
-            Toko.TokoInstance = new Toko(namaToko, alamat, danaToko);
-            System.out.println("Toko " + namaToko + " Berhasil Dibuat");
-        }else {
-            System.out.println("Toko " + TokoInstance.namaToko + " Sudah Ada Sebelumnya");
-            System.out.println("Toko " + namaToko + " Gagal Dibuat");
+         if(Toko.TokoInstance==null){
+            Toko.TokoInstance=new Toko(namaToko, alamat,danaToko);
+            System.out.println("Toko "+namaToko+" berhasil dibuat\n");
+        }else{
+            System.out.println("Toko "+TokoInstance.namaToko+" sudah ada sebelumnya");
+            System.out.println("Toko "+namaToko+" gagal dibuat!\n\n");
         }
-        return null;
+        return Toko.TokoInstance;
     }
     
     public void TampilDaftarKaryawan()

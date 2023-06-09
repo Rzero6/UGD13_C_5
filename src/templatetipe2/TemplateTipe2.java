@@ -9,7 +9,7 @@ public class TemplateTipe2 {
         
         //Silakan buat toko baru dengan nama "Sinar Makmur" menggunakan Singleton
         //...
-        //Toko sinarMakmur = Toko.getTokoInstance("Sinar Makmur", "Jl. Penjajah No.42",36000000);
+        Toko sinarMakmur = Toko.getTokoInstance("Sinar Makmur", "Jl. Penjajah No.42",36000000);
         //
         
         KaryawanFactory kf = new KaryawanFactory();
